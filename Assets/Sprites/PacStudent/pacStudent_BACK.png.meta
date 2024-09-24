@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -68,13 +68,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -124,10 +124,10 @@ TextureImporter:
       name: pacStudent_BACK_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 15
-        width: 70
-        height: 94
+        x: 32
+        y: 16
+        width: 68
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,10 +145,10 @@ TextureImporter:
       name: pacStudent_BACK_1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 15
-        width: 70
-        height: 98
+        x: 160
+        y: 16
+        width: 68
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: pacStudent_BACK_2
       rect:
         serializedVersion: 2
-        x: 287
-        y: 15
-        width: 70
-        height: 102
+        x: 288
+        y: 16
+        width: 68
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: pacStudent_BACK_3
       rect:
         serializedVersion: 2
-        x: 415
-        y: 15
-        width: 70
-        height: 98
+        x: 416
+        y: 16
+        width: 68
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: pacStudent_BACK_4
       rect:
         serializedVersion: 2
-        x: 543
-        y: 15
-        width: 70
-        height: 94
+        x: 544
+        y: 16
+        width: 68
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: pacStudent_BACK_5
       rect:
         serializedVersion: 2
-        x: 671
-        y: 15
-        width: 70
-        height: 98
+        x: 672
+        y: 16
+        width: 68
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,10 +250,10 @@ TextureImporter:
       name: pacStudent_BACK_6
       rect:
         serializedVersion: 2
-        x: 799
-        y: 15
-        width: 70
-        height: 102
+        x: 800
+        y: 16
+        width: 68
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: pacStudent_BACK_7
       rect:
         serializedVersion: 2
-        x: 927
-        y: 15
-        width: 70
-        height: 98
+        x: 928
+        y: 16
+        width: 68
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,14 +291,22 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 622d78215d9b42647ae7049ef49c6ca7
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pacStudent_BACK_0: -2029544766301773932
+      pacStudent_BACK_1: -3394363126046542244
+      pacStudent_BACK_2: 5466205427305941362
+      pacStudent_BACK_3: -8331631311589725143
+      pacStudent_BACK_4: -470673701800752427
+      pacStudent_BACK_5: -7468832337554689249
+      pacStudent_BACK_6: 4244025142271693447
+      pacStudent_BACK_7: -4111802249984852505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
