@@ -298,7 +298,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ghost_NORMAL_SIDE_4_0: -8543743855470652852
+      Ghost_NORMAL_SIDE_4_1: -178513910707492177
+      Ghost_NORMAL_SIDE_4_2: -2363466319559018478
+      Ghost_NORMAL_SIDE_4_3: 3782652340628925123
+      Ghost_NORMAL_SIDE_4_4: 961845125967104674
+      Ghost_NORMAL_SIDE_4_5: 7047039730183729389
+      Ghost_NORMAL_SIDE_4_6: 4814747898270975264
+      Ghost_NORMAL_SIDE_4_7: -5572910239504978899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
