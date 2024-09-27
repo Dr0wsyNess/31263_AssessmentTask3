@@ -12,11 +12,9 @@ public class Tweener : MonoBehaviour
         if (activeTween != null)
         {
             float distance = Vector2.Distance(activeTween.Target.position, activeTween.EndPos);
-            Debug.Log(distance);
             if (distance > 0.1f)
             {
                 float interpolationRatio = (Time.time - activeTween.StartTime) / activeTween.Duration;
-                // float cubicInterpolationRatio = interpolationRatio * interpolationRatio * interpolationRatio;
                 activeTween.Target.position = Vector2.Lerp(activeTween.StartPos, activeTween.EndPos, interpolationRatio);
 
             }
@@ -36,9 +34,5 @@ public class Tweener : MonoBehaviour
             
         }
     }
-
-    public Tween GetActiveTween()
-    {
-        return this.activeTween;
-    }
+    
 }
