@@ -21,36 +21,36 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tweener.activeTween == null)
-        {
-            PlayerMove.Play();
-            switch (moveCount)
-            { 
-                case 0:
-                    //left
-                    tweener.AddTween(item.transform, item.transform.position, new Vector2(-5.5f, 3.5f), 1.5f);
-                    moveCount++;
-                    animatorController.SetTrigger("MoveLeft");
-                    break;
-                case 1:
-                    //down
-                    tweener.AddTween(item.transform, item.transform.position, new Vector2(-5.5f, -0.5f), 1.5f);
-                    moveCount++;
-                    animatorController.SetTrigger("MoveDown");
-                    break;
-                case 2:
-                    //right
-                    tweener.AddTween(item.transform, item.transform.position, new Vector2(-0.5f, -0.5f), 1.5f);
-                    moveCount++;
-                    animatorController.SetTrigger("MoveRight");
-                    break;
-                case 3:
-                    //up
-                    tweener.AddTween(item.transform, item.transform.position, new Vector2(-0.5f, 3.5f), 1.5f);
-                    moveCount = 0;
-                    animatorController.SetTrigger("MoveUp");
-                    break;
-            }
-        }
+        // if (tweener.activeTween == null)
+        // {
+        //     PlayerMove.Play();
+        //     switch (moveCount)
+        //     { 
+        //         case 0:
+        //             //left
+        //             tweener.AddTween(item.transform, item.transform.position, new Vector2(-5.5f, 3.5f), 1.5f);
+        //             moveCount++;
+        //             animatorController.SetTrigger("MoveLeft");
+        //             break;
+        //         case 1:
+        //             //down
+        //             tweener.AddTween(item.transform, item.transform.position, new Vector2(-5.5f, -0.5f), 1.5f);
+        //             moveCount++;
+        //             animatorController.SetTrigger("MoveDown");
+        //             break;
+        //         case 2:
+        //             //right
+        //             tweener.AddTween(item.transform, item.transform.position, new Vector2(-0.5f, -0.5f), 1.5f);
+        //             moveCount++;
+        //             animatorController.SetTrigger("MoveRight");
+        //             break;
+        //         case 3:
+        //             //up
+        //             tweener.AddTween(item.transform, item.transform.position, new Vector2(-0.5f, 3.5f), 1.5f);
+        //             moveCount = 0;
+        //             animatorController.SetTrigger("MoveUp");
+        //             break;
+        //     }
+        // }
     }
 }
