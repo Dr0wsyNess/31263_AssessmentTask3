@@ -817,6 +817,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1199440012042307468, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_TagString
+      value: Level2Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7472168275406971429, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
       propertyPath: m_Text
       value: Level 2
@@ -3609,6 +3617,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670131693}
   m_CullTransparentMesh: 1
+--- !u!1 &670672020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670672022}
+  - component: {fileID: 670672021}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &670672021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670672020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f1f147c73767e4c9561beb33735027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &670672022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670672020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.033301, y: -2.074054, z: -0.13697034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &691742354
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,6 +11573,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1199440012042307468, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_TagString
+      value: Level1Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 670672021}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadFirstLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838530014747158114, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7472168275406971429, guid: cd7d24ec806a8eb4f964f9b024d3e30d, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 50
@@ -11623,3 +11707,4 @@ SceneRoots:
   - {fileID: 1782286501}
   - {fileID: 1453297629}
   - {fileID: 430079715}
+  - {fileID: 670672022}
