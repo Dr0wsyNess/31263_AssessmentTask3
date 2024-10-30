@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ce8b34fe-351a-4860-8a9b-1ebef5c2789d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.31263_AssessmentTask2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.31263_AssessmentTask2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PacStudentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PacStudentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Game Dev/Lab Week 7 - Activity/Assets/Scripts/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -94,7 +97,9 @@
       <workItem from="1729742598588" duration="676000" />
       <workItem from="1729743334338" duration="129000" />
       <workItem from="1729743778799" duration="30000" />
-      <workItem from="1729743829529" duration="1386000" />
+      <workItem from="1729743829529" duration="1433000" />
+      <workItem from="1730099189509" duration="1111000" />
+      <workItem from="1730261390025" duration="3973000" />
     </task>
     <servers />
   </component>

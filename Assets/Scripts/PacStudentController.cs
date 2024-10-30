@@ -6,10 +6,21 @@ public class PacStudentController : MonoBehaviour
 {
     [SerializeField] private GameObject item;
 
+    private bool isMoving;
+    private Vector2 startPos, EndPos;
+    private char lastInput;
+
+    private float playerSpeed = 1.5f;
+    private float interpolationRatio = 0.0f;
+    
+    
+
     private Tweener tweener;
-    private int moveCount = 1;
     public Animator animatorController;
     public AudioSource PlayerMove;
+    public AudioSource eatPellets;
+    
+     
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +32,16 @@ public class PacStudentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerInput();
+        Tween();
+        if (isMoving)
+        {
+            
+        }
+        
+
+        WalkAnimation();
+
         // if (tweener.activeTween == null)
         // {
         //     PlayerMove.Play();
@@ -52,5 +73,49 @@ public class PacStudentController : MonoBehaviour
         //             break;
         //     }
         // }
+    }
+
+    void Tween()
+    {
+        // float distance = Vector2.Distance(activeTween.Target.position, activeTween.EndPos);
+
+        
+            interpolationRatio += playerSpeed * Time.deltaTime;
+            transform.position = Vector2.Lerp(startPos, EndPos, interpolationRatio);
+
+        
+    }
+
+    void playerInput()
+    {
+        if (Input.GetKeyDown("w"))
+        {
+            lastInput = 'w';
+        }
+        if (Input.GetKeyDown("a"))
+        {
+            lastInput = 'a';
+        }
+        if (Input.GetKeyDown("s"))
+        {
+            lastInput = 's';
+        }
+        if (Input.GetKeyDown("d"))
+        {
+            lastInput = 'd';
+        }
+    }
+
+    void WalkAnimation()
+    {
+        animatorController.SetTrigger(lastInput);
+    }
+
+    void Audio()
+    {
+        if (isMoving)
+        {
+            
+        }
     }
 }
