@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ce8b34fe-351a-4860-8a9b-1ebef5c2789d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.31263_AssessmentTask2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.31263_AssessmentTask2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/pacStudentController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/pacStudentController.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PacStudentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PacStudentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tween.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tweener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tweener.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +102,7 @@
       <workItem from="1729743829529" duration="1433000" />
       <workItem from="1730099189509" duration="1111000" />
       <workItem from="1730261390025" duration="3973000" />
+      <workItem from="1730330275901" duration="5887000" />
     </task>
     <servers />
   </component>
