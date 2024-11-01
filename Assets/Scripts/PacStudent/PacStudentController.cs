@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
+using UnityEngine.Tilemaps;
 
 public class PacStudentController : MonoBehaviour
 {
     [SerializeField] private GameObject item;
     private Tweener tweener;
-    private Vector3 direction = Vector3.zero;
+    private Vector3 lastDirection = Vector3.zero;
+    private Vector3 currentDirection = Vector3.zero;
     public Animator animatorController;
     public AudioSource moveSound;
     public AudioSource eatPellets;
     
-    private bool isMoving;
-    private Vector3 startPos, EndPos;
-    private char lastInput = ' ';
-    private char CurrentInput = ' ';
+    private string lastInput = "blank";
+    private string CurrentInput = "blank";
     private RaycastHit colHit;
+    private LayerMask wall;
+    private LayerMask pellets;
+    
 
-    private float playerSpeed = 1.5f;
+    private float playerSpeed = 0.5f;
+
+    [SerializeField]
+    private Tilemap wallTile;
     
      
     
@@ -26,6 +31,8 @@ public class PacStudentController : MonoBehaviour
     void Start()
     {
         tweener = GetComponent<Tweener>();
+        pellets = LayerMask.GetMask("Pellets1");
+
     }
 
     // Update is called once per frame
@@ -35,27 +42,24 @@ public class PacStudentController : MonoBehaviour
         PlayerLastInput();
         
         //if PacStudent is not lerping
-        if (tweener.activeTween != null)
+        if (tweener.activeTween == null)
         {
+            
             //check lastInput is if its walkable update currentInput to lastInput and lerp to position
-            if(IsWalkable(lastInput))
+            if(IsWalkable(lastDirection))
             {
                 UpdateCurrentInput();
                 PlayerMove();
             }
             else
             {
-                if (IsWalkable(CurrentInput))
+                if (IsWalkable(currentDirection))
                 {
                     PlayerMove();
                 }
             }
+            Audio();
         }
-        PlayerMove();
-        
-
-        // WalkAnimation();
-        
     }
 
 
@@ -64,54 +68,88 @@ public class PacStudentController : MonoBehaviour
     {
         if (Input.GetKeyDown("w"))
         {
-            direction = Vector3.up;
-            lastInput = 'w';
+            lastDirection = Vector3.up;
+            lastInput = "w";
         }
         if (Input.GetKeyDown("a"))
         {
-            direction = Vector3.left;
-            lastInput = 'a';
+            lastDirection = Vector3.left;
+            lastInput = "a";
         }
         if (Input.GetKeyDown("s"))
         {
-            direction = Vector3.down;
-            lastInput = 's';
+            lastDirection = Vector3.down;
+            lastInput = "s";
         }
         if (Input.GetKeyDown("d"))
         {
-            direction = Vector3.right;
-            lastInput = 'd';
+            lastDirection = Vector3.right;
+            lastInput = "d";
         }
     }
 
     void UpdateCurrentInput()
     {
         CurrentInput = lastInput;
-        WalkAnimation();
+        animatorController.SetTrigger(CurrentInput);
+        currentDirection = lastDirection;
+        Debug.Log("CurrentInput: " + CurrentInput);
+        
 
     }
 
     void PlayerMove()
     {
-        if (CurrentInput == ' ')
+        if (CurrentInput != "blank")
         {
-            tweener.AddTween(item.transform, item.transform.position, item.transform.position + direction, playerSpeed);
+            tweener.AddTween(item.transform, item.transform.position, item.transform.position + currentDirection, playerSpeed);
         }
     }
 
-    bool IsWalkable(char move)
+    bool IsWalkable(Vector3 move)
     {
-        // if (Physics.Raycast(item.transform.position, direction, out colHit, 5.0f, ))
-        return false;
-    }
+        Vector3Int gridPostition = wallTile.WorldToCell(item.transform.position + move);
+        if (wallTile.HasTile(gridPostition))
+        {
+            // wallPoint = colHit.point;
+            return false;
+        }
 
-    void WalkAnimation()
-    {
-        animatorController.SetTrigger(lastInput);
+        return true;
+
+        // Debug.Log("checking if walkable");
+        // if (Physics.Raycast(item.transform.position, move, out colHit,20.0f, wall))
+        // {
+        //     Debug.Log("hitwall");
+        //     if (Vector3.Distance(item.transform.position, colHit.point) > 1)
+        //     {
+        //         
+        //         wallPoint = colHit.point;
+        //         return true;
+        //     }
+        // }
+        // Debug.Log("didnt hit");
+        // Debug.DrawRay(item.transform.position, move * 50.0f, Color.red);
+        // return false;
     }
 
     void Audio()
     {
-        
+        if (Physics.Raycast(item.transform.position, currentDirection, out colHit, 1.0f, pellets))
+        {
+            if (Vector3.Distance(item.transform.position, colHit.point) < 1)
+            {
+                Debug.Log("pellet");
+                moveSound.Stop();
+                eatPellets.Play();
+            }
+        }
+        else
+        {
+                Debug.Log("nothing");
+                eatPellets.Stop();
+                moveSound.Play();
+        }
+        Debug.DrawRay(item.transform.position, currentDirection * 1.0f, Color.red);
     }
 }
