@@ -16,7 +16,6 @@ public class PacStudentController : MonoBehaviour
     private string lastInput = "blank";
     private string CurrentInput = "blank";
     private RaycastHit colHit;
-    private LayerMask wall;
     private LayerMask pellets;
     
 
@@ -111,26 +110,9 @@ public class PacStudentController : MonoBehaviour
         Vector3Int gridPostition = wallTile.WorldToCell(item.transform.position + move);
         if (wallTile.HasTile(gridPostition))
         {
-            // wallPoint = colHit.point;
             return false;
         }
-
         return true;
-
-        // Debug.Log("checking if walkable");
-        // if (Physics.Raycast(item.transform.position, move, out colHit,20.0f, wall))
-        // {
-        //     Debug.Log("hitwall");
-        //     if (Vector3.Distance(item.transform.position, colHit.point) > 1)
-        //     {
-        //         
-        //         wallPoint = colHit.point;
-        //         return true;
-        //     }
-        // }
-        // Debug.Log("didnt hit");
-        // Debug.DrawRay(item.transform.position, move * 50.0f, Color.red);
-        // return false;
     }
 
     void Audio()
