@@ -17,6 +17,8 @@ public class PacStudentController : MonoBehaviour
     private string CurrentInput = "blank";
     private RaycastHit colHit;
     private LayerMask pellets;
+
+    public ParticleSystem dust;
     
 
     private float playerSpeed = 0.5f;
@@ -30,7 +32,7 @@ public class PacStudentController : MonoBehaviour
     void Start()
     {
         tweener = GetComponent<Tweener>();
-        pellets = LayerMask.GetMask("Pellets1");
+        pellets = LayerMask.GetMask("Pellets");
 
     }
 
@@ -102,6 +104,7 @@ public class PacStudentController : MonoBehaviour
         if (CurrentInput != "blank")
         {
             tweener.AddTween(item.transform, item.transform.position, item.transform.position + currentDirection, playerSpeed);
+            CreateDust();
         }
     }
 
@@ -133,5 +136,10 @@ public class PacStudentController : MonoBehaviour
                 moveSound.Play();
         }
         Debug.DrawRay(item.transform.position, currentDirection * 1.0f, Color.red);
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
