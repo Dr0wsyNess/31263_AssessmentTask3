@@ -24,8 +24,13 @@ public class PacStudentController : MonoBehaviour
     private float playerSpeed = 0.5f;
 
     [SerializeField]
-    private Tilemap wallTile;
-    
+    private Tilemap wallTileTL;
+    [SerializeField]
+    private Tilemap wallTileTR;
+    [SerializeField]
+    private Tilemap wallTileBL;
+    [SerializeField]
+    private Tilemap wallTileBR;
      
     
     // Start is called before the first frame update
@@ -59,7 +64,6 @@ public class PacStudentController : MonoBehaviour
                     PlayerMove();
                 }
             }
-            Audio();
         }
     }
 
@@ -104,14 +108,19 @@ public class PacStudentController : MonoBehaviour
         if (CurrentInput != "blank")
         {
             tweener.AddTween(item.transform, item.transform.position, item.transform.position + currentDirection, playerSpeed);
+            Audio();
             CreateDust();
         }
     }
 
     bool IsWalkable(Vector3 move)
     {
-        Vector3Int gridPostition = wallTile.WorldToCell(item.transform.position + move);
-        if (wallTile.HasTile(gridPostition))
+        Vector3Int gridPostitionTL = wallTileTL.WorldToCell(item.transform.position + move);
+        Vector3Int gridPostitionTR = wallTileTR.WorldToCell(item.transform.position + move);
+        Vector3Int gridPostitionBL = wallTileBL.WorldToCell(item.transform.position + move);
+        Vector3Int gridPostitionBR = wallTileBR.WorldToCell(item.transform.position + move);
+        
+        if (wallTileTL.HasTile(gridPostitionTL) || wallTileTR.HasTile(gridPostitionTR) || wallTileBL.HasTile(gridPostitionBL) || wallTileBR.HasTile(gridPostitionBR))
         {
             return false;
         }
