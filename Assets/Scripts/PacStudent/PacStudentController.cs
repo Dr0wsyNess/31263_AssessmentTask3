@@ -7,22 +7,11 @@ public class PacStudentController : MonoBehaviour
 {
     [SerializeField] private GameObject item;
     private Tweener tweener;
-    private Vector3 lastDirection = Vector3.zero;
-    private Vector3 currentDirection = Vector3.zero;
     public Animator animatorController;
     public AudioSource moveSound;
     public AudioSource eatPellets;
-    
-    private string lastInput = "blank";
-    private string CurrentInput = "blank";
-    private RaycastHit colHit;
-    private LayerMask pellets;
-
     public ParticleSystem dust;
     
-
-    private float playerSpeed = 0.5f;
-
     [SerializeField]
     private Tilemap wallTileTL;
     [SerializeField]
@@ -31,7 +20,17 @@ public class PacStudentController : MonoBehaviour
     private Tilemap wallTileBL;
     [SerializeField]
     private Tilemap wallTileBR;
-     
+
+    
+    private string lastInput = "blank";
+    private string currentInput = "blank";
+    private Vector3 lastDirection = Vector3.zero;
+    private Vector3 currentDirection = Vector3.zero;
+    private RaycastHit colHit;
+    private LayerMask pellets;
+    
+
+    private float playerSpeed = 0.5f;
     
     // Start is called before the first frame update
     void Start()
@@ -95,18 +94,18 @@ public class PacStudentController : MonoBehaviour
 
     void UpdateCurrentInput()
     {
-        CurrentInput = lastInput;
-        animatorController.SetTrigger(CurrentInput);
+        currentInput = lastInput;
+        animatorController.SetTrigger(currentInput);
         currentDirection = lastDirection;
     }
 
     void PlayerMove()
     {
-        if (CurrentInput != "blank")
+        if (currentInput != "blank")
         {
             tweener.AddTween(item.transform, item.transform.position, item.transform.position + currentDirection, playerSpeed);
             Audio();
-            CreateDust();
+            dust.Play();
         }
     }
 
@@ -140,10 +139,5 @@ public class PacStudentController : MonoBehaviour
                 moveSound.Play();
         }
         // Debug.DrawRay(item.transform.position, currentDirection * 1.0f, Color.red);
-    }
-
-    void CreateDust()
-    {
-        dust.Play();
     }
 }

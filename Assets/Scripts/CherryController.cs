@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class CherryController : MonoBehaviour
 {
     [SerializeField]
     private GameObject bonusCherry;
-
     private GameObject currentCherry;
-    private float spawnRate = 2f;
-    private float cherrySpeed = 10f;
-
-    // private Camera mainCamera;
     private Tweener tweener;
+    
+    
+    private float spawnRate = 10f;
+    private float cherrySpeed = 10f;
     private Vector3 startPos = new Vector3(0f, 0f, 0f);
     private Vector3 endPos = new Vector3(0f, 0f, 0f);
     
@@ -30,20 +28,27 @@ public class CherryController : MonoBehaviour
     {
         //reduce sqawnRate by amount of time that has passed by this frame
         spawnRate -= Time.deltaTime;
-        if (spawnRate <= 0 && bonusCherry && tweener.activeTween == null)
+        Debug.Log(spawnRate);
+        if (spawnRate <= 0)
         {
-            SpawnCherry();
-            tweener.AddTween(currentCherry.transform, currentCherry.transform.position,new Vector3(endPos.x, endPos.y, 0f) , cherrySpeed);
-            spawnRate = 10f;
+            if (tweener.activeTween == null)
+            {
+                if (currentCherry == null || Vector3.Distance(currentCherry.transform.position, endPos) < 11.0f)
+                {
+                    Destroy(currentCherry);
+                }
+                SpawnCherry();
+                tweener.AddTween(currentCherry.transform, currentCherry.transform.position, new Vector3(endPos.x, endPos.y, 0f), cherrySpeed);
+                spawnRate = 10f;
+            }
         }
-
     }
 
     void SpawnCherry()
     {
         int spawnSide = Random.Range(0,4);
-        float xPos = 0.0f;
-        float yPos = 0.0f;
+        float xPos;
+        float yPos;
         startPos = new Vector3(0f, 0f, 0f);
         endPos = new Vector3(0f, 0f, 0f);
             
@@ -73,15 +78,5 @@ public class CherryController : MonoBehaviour
         
         currentCherry = Instantiate(bonusCherry, new Vector3(startPos.x, startPos.y, 0f), Quaternion.identity);
     }
-
-    void CherryMove()
-    {
-        while (currentCherry.transform.position != endPos)
-        {
-            tweener.AddTween(currentCherry.transform, currentCherry.transform.position,new Vector3(endPos.x, endPos.y, 0f) , cherrySpeed);
-        }
-        Destroy(currentCherry);
-    }
-
     
 }

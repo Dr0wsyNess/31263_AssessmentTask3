@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CherryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CherryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PacStudent/PacStudentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PacStudent/PacStudentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/bonus_score.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/bonus_score.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,9 @@
       <workItem from="1730330275901" duration="6328000" />
       <workItem from="1730343699180" duration="22357000" />
       <workItem from="1730520769834" duration="14662000" />
-      <workItem from="1730543102443" duration="1292000" />
+      <workItem from="1730543102443" duration="1376000" />
+      <workItem from="1730544611908" duration="1373000" />
+      <workItem from="1730546191622" duration="4076000" />
     </task>
     <servers />
   </component>
