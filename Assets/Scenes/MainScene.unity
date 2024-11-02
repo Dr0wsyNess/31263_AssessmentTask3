@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 43785731}
   - component: {fileID: 43785730}
   - component: {fileID: 43785729}
+  - component: {fileID: 43785732}
   m_Layer: 0
   m_Name: TweenController
   m_TagString: Untagged
@@ -242,6 +243,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43785732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43785728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a03cf6e4e725547a66c5e6ca9cad8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusCherry: {fileID: 689539501725527653, guid: f6615f50e99efba46b5c37f08b6a94a3, type: 3}
 --- !u!1 &76942985
 GameObject:
   m_ObjectHideFlags: 0
@@ -8494,7 +8508,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9873,7 +9887,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.2
+      scalar: -0.25
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9926,7 +9940,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.25
       minScalar: 0
       maxCurve:
         serializedVersion: 2

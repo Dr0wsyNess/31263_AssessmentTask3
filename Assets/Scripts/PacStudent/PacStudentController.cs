@@ -98,9 +98,6 @@ public class PacStudentController : MonoBehaviour
         CurrentInput = lastInput;
         animatorController.SetTrigger(CurrentInput);
         currentDirection = lastDirection;
-        Debug.Log("CurrentInput: " + CurrentInput);
-        
-
     }
 
     void PlayerMove()
@@ -133,18 +130,16 @@ public class PacStudentController : MonoBehaviour
         {
             if (Vector3.Distance(item.transform.position, colHit.point) < 1)
             {
-                Debug.Log("pellet");
                 moveSound.Stop();
                 eatPellets.Play();
             }
         }
         else
         {
-                Debug.Log("nothing");
                 eatPellets.Stop();
                 moveSound.Play();
         }
-        Debug.DrawRay(item.transform.position, currentDirection * 1.0f, Color.red);
+        // Debug.DrawRay(item.transform.position, currentDirection * 1.0f, Color.red);
     }
 
     void CreateDust()

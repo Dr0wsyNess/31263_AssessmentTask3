@@ -9,6 +9,7 @@ TagManager:
   - Level2Button
   - pellets
   - walls
+  - Cherry
   layers:
   - Default
   - TransparentFX
