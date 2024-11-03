@@ -10,6 +10,7 @@ public class PacStudentController : MonoBehaviour
     public Animator animatorController;
     public AudioSource moveSound;
     public AudioSource eatPellets;
+    public AudioSource wallCollide;
     public ParticleSystem dust;
     
     [SerializeField]
@@ -62,6 +63,13 @@ public class PacStudentController : MonoBehaviour
                 {
                     PlayerMove();
                 }
+            }
+        }
+        else
+        {
+            if(!IsWalkable(currentDirection))
+            {
+                wallCollide.Play();
             }
         }
     }

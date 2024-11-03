@@ -28,7 +28,6 @@ public class CherryController : MonoBehaviour
     {
         //reduce sqawnRate by amount of time that has passed by this frame
         spawnRate -= Time.deltaTime;
-        Debug.Log(spawnRate);
         if (spawnRate <= 0)
         {
             if (tweener.activeTween == null)
