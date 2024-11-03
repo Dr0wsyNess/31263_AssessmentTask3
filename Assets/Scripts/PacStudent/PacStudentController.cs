@@ -12,6 +12,7 @@ public class PacStudentController : MonoBehaviour
     public AudioSource eatPellets;
     public AudioSource wallCollide;
     public ParticleSystem dust;
+    public ParticleSystem dustWall;
     
     [SerializeField]
     private Tilemap wallTileTL;
@@ -65,13 +66,12 @@ public class PacStudentController : MonoBehaviour
                 }
             }
         }
-        else
+        else if (!IsWalkable(currentDirection) && tweener.activeTween != null)
         {
-            if(!IsWalkable(currentDirection))
-            {
-                wallCollide.Play();
-            }
+            dustWall.Play();
+            wallCollide.Play();
         }
+        
     }
 
 
